@@ -5,8 +5,11 @@ class Gear:
         self.rim = rim
         self.tire = tire
 
+    def diameter(self):
+        return self.rim + (self.tire * 2)
+
     def ratio(self):
         return self.chainring / self.cog
 
     def gear_inches(self):
-        return (self.ratio() * (self.rim + (self.tire * 2)))
+        return self.ratio() * self.diameter()
