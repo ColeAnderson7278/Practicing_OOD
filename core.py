@@ -32,25 +32,18 @@ class Trip:
         self.customers = customers
         self.vehicle = vehicle
 
-    def prepare(self,preparers):
+    def prepare(self, preparers):
         for preparer in preparers:
-            if isinstance(preparer, Mechanic):
-                preparer.prepare_bicycles(self.bicycles)
-            else if isinstance(preparer,TripCoordinator):
-                preparer.buy_food(self.customers)
-            else if isinstance(preparer,Driver):
-                preparer.gas_up(self.vehicle)
-                preparer.fill_water_tank(self.vehicle)
+            preparer.prepare_trip()
+
 
 class Mechanic:
     def __init__(self, bicycles):
         self.bicycles = bicycles
 
-    def prepare_bicycles(self):
-        fixed_bikes = []
-        for bike in self.bicycles:
-            fixed_bikes.append(self.prepare_bicycle(bike))
-        return fixed_bikes
+    def prepare_trip(self, trip):
+        for bike in trip.bicycles:
+            bike.prepare_bicycle()
 
     def prepare_bicycle(self):
         return None
@@ -60,7 +53,7 @@ class TripCoordinator:
     def __init__(self, customers):
         self.customers = customers
 
-    def buy_food(self):
+    def prepare_trip(self, trip):
         return None
 
 
@@ -68,8 +61,7 @@ class Driver:
     def __init__(self, vehicle):
         self.vehicle = vehicle
 
-    def gas_up(self):
-        return None
-    
-    def fill_water_tank(self):
-        return None
+    def prepare_trip(self, trip):
+        vehicle = trip.vehicle
+        gas_up(vehicle)
+        fill_water_tank(vehicle)
