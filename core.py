@@ -65,3 +65,14 @@ class Driver:
         vehicle = trip.vehicle
         gas_up(vehicle)
         fill_water_tank(vehicle)
+
+
+class Bicycle:
+    def __init__(self, size, tape_color):
+        self.size = size
+        self.tape_color = tape_color
+
+    # def spares(self):
+    #     {chain:"10-speed";
+    #     tire_size:"23";
+    #     tape_color:tape_color}
