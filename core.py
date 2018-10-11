@@ -70,8 +70,12 @@ class Driver:
 class Bicycle:
     def __init__(self, size, chain, tire_size):
         self.size = size
-        self.chain = '10-speed'
+        self.chain = chain
         self.tire_size = tire_size
+
+    def spares(self):
+        self.chain = "10-speed"
+        self.tire_size = "23"
 
 
 class MountainBike(Bicycle):
@@ -85,3 +89,14 @@ class RoadBike(Bicycle):
     def __init__(self, tape_color):
         self.tape_color = tape_color
         self.tire_size = "2.1"
+
+    def spares(self):
+        self.tape_color = tape_color
+
+
+class RecumbentBike(Bicycle):
+    def __init__(self, flag):
+        self.flag = flag
+
+    def spares(self):
+        self.flag = flag
