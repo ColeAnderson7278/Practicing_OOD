@@ -68,20 +68,20 @@ class Driver:
 
 
 class Bicycle:
-    def __init__(self, style, size, tape_color, front_shock, rear_shock):
-        self.style = style
+    def __init__(self, size, chain, tire_size):
         self.size = size
-        self.tape_color = tape_color
-        self.front_shock = front_shock
-        self.rear_shock = rear_shock
+        self.chain = '10-speed'
+        self.tire_size = tire_size
 
-    # def spares(self):
-    #     if self.style == "road":
-    #         self.spares =
-    #         {chain: "10-speed";
-    #         tire_size: "23";
-    #         tape_color: tape_color;}
-    #     else:
-    #         self.spares = {chain: "10-speed";
-    #         tire_size: "2.1";
-    #         rear_shock: rear_shock;}
+
+class MountainBike(Bicycle):
+    def __init__(self, front_shock, back_shock):
+        self.front_shock = front_shock
+        self.back_shock = back_shock
+        self.tire_size = "23"
+
+
+class RoadBike(Bicycle):
+    def __init__(self, tape_color):
+        self.tape_color = tape_color
+        self.tire_size = "2.1"
