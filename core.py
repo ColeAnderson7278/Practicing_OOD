@@ -92,20 +92,35 @@ import math
 #         self.flag = flag
 
 
-class Schedule():
-    def scheduled(self, schedulabel, start_date, end_date):
-        return f"This {schedulabel.class} is not scheduled\n" + f"between {start_date} and {end_date}"
+# class Schedule():
+#     def scheduled(self, schedulabel, start_date, end_date):
+#         return f"This {schedulabel.class} is not scheduled\n" + f"between {start_date} and {end_date}"
 
+
+# class Bicycle():
+#     def __init__(self, schedule, size, chain, tire_size):
+#         self.schedule = Schedule()
+#         self.size = size
+#         self.chain = chain
+#         self.tire_size = tire_size
+
+#     def schedulabel(self, start_date, end_date):
+#         return False and scheduled(start_date, end_date)
+
+#     def scheduled(self, start_date, end_date):
+#         schedule.scheduled(start_date, end_date)
 
 class Bicycle():
-    def __init__(self, schedule, size, chain, tire_size):
-        self.schedule = Schedule()
+    def __init__(self, size, parts):
+        self.size = size
+        self.parts = parts
 
-    def schedulabel(self, start_date, end_date):
-        return False and scheduled(start_date, end_date)
+    def spares(self):
+        parts.spares
 
-    def scheduled(self, start_date, end_date):
-        schedule.scheduled(start_date, end_date)
+class Parts():
+    def __init__(self, chain, tire_size):
+        self.chain = chain
+        self.tire_size = tire_size
 
-    def lead_days(self):
-        return 1
+    def spares(self):
